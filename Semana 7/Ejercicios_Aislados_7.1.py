@@ -43,50 +43,5 @@ def medio():
         except ValueError:
             print("Introduzca un valor numerico entero")
 
-def dificil():
-    def retirar(saldo, monto):
-        if monto < 0:
-            raise ValueError("No es posible retirar montos negativos")
-        if monto == 0:
-            raise ValueError("No se seleccionó ningún monto")
-        if monto > saldo:
-            raise ValueError("No se puede retirar más del saldo")
-        return saldo - monto
-
-    saldo = 5000
-    while True:
-        try:
-            accion = int(input("¿Qué acción desea hacer hoy?:\nVer saldo: 1\nRetirar saldo: 2\nSalir: 3\n"))
-        except ValueError:
-            print("Escriba una opción válida")
-            continue
-        else:
-            if accion < 1 or accion > 3:
-                print("Esa opción no existe")
-
-            elif accion == 1:
-                print(f"Su saldo es: {saldo}")
-
-            elif accion == 2:
-                try:
-                    monto = int(input("¿Cuánto saldo desea retirar?: "))
-
-                except ValueError:
-                    print("Escriba un monto válido")
-                    continue
-
-                try:
-                    saldo = retirar(saldo, monto)
-
-                except ValueError as error:
-                    print(f"Error: {error}")
-
-                else:
-                    print(f"Monto retirado, saldo restante: {saldo}")
-
-            elif accion == 3:
-                print("Cerrando terminal")
-                break    
-
 if __name__ == "__main__":
     dificil()
