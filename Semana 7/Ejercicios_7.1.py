@@ -44,4 +44,4 @@ def medio():
             print("Introduzca un valor numerico entero")
 
 if __name__ == "__main__":
-    dificil()
+    medio()

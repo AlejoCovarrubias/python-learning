@@ -1,0 +1,3 @@
+Hola, estoy aprendiendo Python.
+Esta es la semana 7
+Estoy aprendiendo manejo de archivos
