@@ -69,7 +69,7 @@ def medio_2():
     archivo1 = ruta / "datos.txt"
     archivo2 = ruta / "ventas.csv"
     datos = ruta / "datos"
-    resultados = ruta / "datos"
+    resultados = ruta / "resultados"
 
     for archivos in [archivo1, archivo2]:
         archivos.touch(exist_ok=True)
