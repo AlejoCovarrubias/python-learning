@@ -37,13 +37,13 @@ def facil_1():
 
 def facil_2():
     from pathlib import Path
-
-    ruta = Path("Semana 7/clase7_4/datos/ventas/ventas_2026.csv")
+    ruta = Path("Semana 7") / "clase7_4" / "datos" / "ventas" / "ventas_2026.csv"
     ruta.mkdir(parents=True, exist_ok=True)
-    print(f"Nombre de ruta: {ruta}")
-    print(f"Nombre con extension: {ruta.name}")
-    print(f"Nombre sin extension: {ruta.stem}")
-    print(f"Ruta principal_ {ruta.parent}")
+
+    print(f"Nombre: {ruta.name}")
+    print(f"Nombre sin extensión: {ruta.stem}")
+    print(f"Extensión: {ruta.suffix}")
+    print(f"Carpeta padre: {ruta.parent}")
 
 def medio_1():
     from pathlib import Path
@@ -53,12 +53,14 @@ def medio_1():
     archivo1 = ruta / "ventas.csv"
     archivo2 = ruta / "clientes.csv"
     archivo3 = ruta / "productos.csv"
-    archivo4 = ruta / "notas.csv"
-    archivo5 = ruta / "config.csv"
+    archivo4 = ruta / "notas.txt"
+    archivo5 = ruta / "config.json"
 
     for i in [archivo1, archivo2, archivo3, archivo4, archivo5]:
         i.touch(exist_ok=True)
-    for i in ruta.iterdir():
+    archivos_csv = ruta.glob("*.csv")
+
+    for i in archivos_csv:
         print(i)
 
 def medio_2():
@@ -82,5 +84,36 @@ def medio_2():
         elif elementos.is_dir():
             print(f"Carpetas encontradas: {elementos}")
 
+def dificil():
+    from pathlib import Path
+
+    ruta = Path("Semana 7/clase7_4/proyecto")
+    ruta.mkdir(parents=True, exist_ok=True)
+    datos = ruta / "datos"
+    enero = datos / "enero"
+    febrero = datos / "febrero"
+
+    ventas_enero = enero / "ventas.csv"
+    clientes_enero = enero / "clientes.txt"
+    ventas_febrero = febrero / "ventas.csv"
+    backups = ruta / "backups"
+    backup_antiguo = backups / "antiguo.csv"
+
+    resultados = ruta / "resultados"
+    resumen_resultados = resultados / "resumen.txt"
+
+    datos.mkdir(parents=True, exist_ok=True)
+    enero.mkdir(parents=True, exist_ok=True)
+    febrero.mkdir(parents=True, exist_ok=True)
+    backups.mkdir(parents=True, exist_ok=True)
+    resultados.mkdir(parents=True, exist_ok=True)
+
+    for i in [ventas_enero,clientes_enero,ventas_febrero,backup_antiguo,resumen_resultados]:
+            i.touch(exist_ok=True)
+    
+    archivos_csv = ruta.rglob("*.csv")
+    for i in archivos_csv():
+        print(i)
+    
 if __name__ == "__main__":
-    medio_2()
+    dificil()
