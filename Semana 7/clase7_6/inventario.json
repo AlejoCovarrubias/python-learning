@@ -1,0 +1,32 @@
+[
+    {
+        "nombre": "Mouse",
+        "categoria": "Perif\u00e9ricos",
+        "precio": 15000,
+        "stock": 25
+    },
+    {
+        "nombre": "Teclado",
+        "categoria": "Perif\u00e9ricos",
+        "precio": 28000,
+        "stock": 12
+    },
+    {
+        "nombre": "Monitor",
+        "categoria": "Pantallas",
+        "precio": 185000,
+        "stock": 2
+    },
+    {
+        "nombre": "Auriculares",
+        "categoria": "Audio",
+        "precio": 42000,
+        "stock": 18
+    },
+    {
+        "nombre": "Notebook",
+        "categoria": "Computadoras",
+        "precio": 980000,
+        "stock": 4
+    }
+]
