@@ -91,8 +91,14 @@ def facil_2():
     print(producto.precio)
     print(producto.stock)
 
-    producto.precio = -100
-    producto.stock = -5
+    try:
+        producto.precio = -100
+    except ValueError as error:
+        print(error)
+    try:
+        producto.stock = -5
+    except ValueError as error:
+        print(error)
 
 def medio():
     class Sensor:
@@ -107,8 +113,8 @@ def medio():
         @valor.setter
         def valor(self, valor):
             if valor < 0:
-                raise ValueError("El valor debe ser numerico")
-
+                raise ValueError("El valor debe ser mayor a 0")
+            self._valor = valor
         @property
         def limite(self):
             return self._limite
@@ -116,7 +122,7 @@ def medio():
         def limite(self, limite):
             if limite < 0:
                 raise ValueError("El limite no puede ser negativo")
-
+            self.limite = limite
         def esta_en_alerta(self):
             if self._valor > self._limite:
                 return True           
@@ -179,7 +185,11 @@ def dificil():
         print(f"Titular: {cuenta.titular}")
         print(f"Saldo: {cuenta.saldo}\n")
           
-    print(cuenta1.__saldo)  #No se accese a saldo xq usa __ y evita que se accesa por afuera de la clase
-
+    try:
+        print(cuenta1.__saldo)
+    except AttributeError:
+        print("No se puede acceder directamente a __saldo")
+        
+    #__saldo utiliza name mangling y dificulta el acceso directo desde fuera de la clase; no constituye privacidad absoluta.
 if __name__ == "__main__":
     dificil()
