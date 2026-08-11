@@ -213,7 +213,7 @@ def dificil():
             vehiculo_mayor_costo = vehiculo
 
     print(f"Mantenimiento mas caro: {mayor_mantenimiento}")
-    print(f"Vehiculo mayor costo: {vehiculo_mayor_costo}")
+    print(f"Vehiculo mayor costo: {vehiculo_mayor_costo.describir()}")
     
 
 if __name__ == "__main__":
