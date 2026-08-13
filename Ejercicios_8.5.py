@@ -98,13 +98,12 @@ def dificil():
             return self._valor > self._limite
         
         def __str__(self):
-            estado = "normal"
-            if self.esta_en_alerta() is True:
+            estado = "Normal"
+            if self.esta_en_alerta(): #is True
                 estado = "Alerta"
             return f"{self.identificador} | {self.tipo} | {self.valor} | {self.limite} | {estado}\n"
 
         def __repr__(self):
-
             return f"Sensor: identificador = {self.identificador!r}, tipo = {self.tipo!r}, valor = {self.valor!r} limite = {self.limite!r}\n"
   
     sensor_1 = Sensor("Sensor 1", "Temperatura motor", 75, 70)
