@@ -427,11 +427,25 @@ def integracion_5():
                 return False
             self._stock -= cantidad
             return True
+        def cambiar_stock(self, nuevo_stock):
+            if nuevo_stock < 0:
+                return False
+            self._stock = nuevo_stock
+            return True
         def reponer(self, cantidad):
             if cantidad <= 0:
                 return False
             self._stock += cantidad
             return True
+        def __str__(self):
+            return f"{self.nombre} | {self.categoria} | {self._precio} | {self._stock}"
+        def __repr__(self):
+            return (
+                f"Producto(Nombre: {self.nombre!r}."
+                f"Categoria: {self.categoria!r}."
+                f"Precio: {self._precio!r}."
+                f"Stock: {self._stock!r})\n"
+                    )
     class Inventario:
         def __init__(self):
             self.productos = []
@@ -439,6 +453,12 @@ def integracion_5():
         def crear_producto(self, producto):
             self.productos.append(producto)
 
+        def cambiar_stock_producto(self, producto, nuevo_stock):
+            if nuevo_stock < 0:
+                return False
+            if producto in self.productos:
+                return producto.cambiar_stock(nuevo_stock)
+            return False
         def eliminar_producto(self, producto):
             if producto in self.productos:
                 self.productos.remove(producto)
@@ -457,15 +477,43 @@ def integracion_5():
                 return producto.reponer(cantidad)
             return False
 
+    producto1 = Producto("Mouse", "perifericos", 15000, 3)
+    producto2 = Producto("teclado", "perifericos", 5000, 20)
+    producto3 = Producto("Monitor", "perifericos", 1000, 1)
+    producto4 = Producto("Disco", "hardware ", 6000, 1)
+    producto5 = Producto("Camara", "perifericos", 4200, 6)
+    producto6 = Producto("Ram", "hardware", 700, 4)
 
+    productos = [producto1, producto2, producto3, producto4, producto5, producto6]
+    inventario = Inventario()
+    
+    for producto in productos:
+        inventario.crear_producto(producto)
+    
     ruta = Path("Semana 8") / "Datos"
     ruta.mkdir(parents=True, exist_ok=True)
 
     archivo = ruta / "Integracion_5.json"
 
-    contenido = {
-        
-    }
+    inventario.vender_producto(producto1, 2)
+    inventario.cambiar_stock_producto(producto2, 15)
+    inventario.reponer_producto(producto3, 5)
+    
+    producto7 = Producto("Auriculares", "perifericos", 3000, 10)
+    inventario.crear_producto(producto7)
+    
+    productos_dict = []
+    for producto in inventario.productos:
+        productos_dict.append({
+            "nombre": producto.nombre,
+            "categoria": producto.categoria,
+            "precio": producto.precio,
+            "stock": producto.stock
+        })
+
+    with open(archivo, "w", encoding="utf-8") as archivo:
+        json.dump(productos_dict, archivo, indent=4)        
+    
 
 if __name__ == "__main__":
     integracion_5()

@@ -1,0 +1,81 @@
+[
+    {
+        "nombre": "Mouse",
+        "categoria": "perifericos",
+        "precio": 15000,
+        "stock": 1
+    },
+    {
+        "nombre": "Ram",
+        "categoria": "hardware",
+        "precio": 700,
+        "stock": 4
+    },
+    {
+        "nombre": "Disco",
+        "categoria": "hardware ",
+        "precio": 6000,
+        "stock": 1
+    },
+    {
+        "nombre": "Monitor",
+        "categoria": "perifericos",
+        "precio": 1000,
+        "stock": 6
+    },
+    {
+        "nombre": "teclado",
+        "categoria": "perifericos",
+        "precio": 5000,
+        "stock": 15
+    },
+    {
+        "nombre": "Camara",
+        "categoria": "perifericos",
+        "precio": 4200,
+        "stock": 6
+    },
+    {
+        "nombre": "Auriculares",
+        "categoria": "perifericos",
+        "precio": 3000,
+        "stock": 10
+    }
+][
+    {
+        "nombre": "Mouse",
+        "categoria": "perifericos",
+        "precio": 15000,
+        "stock": 3
+    },
+    {
+        "nombre": "Ram",
+        "categoria": "hardware",
+        "precio": 700,
+        "stock": 4
+    },
+    {
+        "nombre": "Disco",
+        "categoria": "hardware ",
+        "precio": 6000,
+        "stock": 1
+    },
+    {
+        "nombre": "Monitor",
+        "categoria": "perifericos",
+        "precio": 1000,
+        "stock": 1
+    },
+    {
+        "nombre": "teclado",
+        "categoria": "perifericos",
+        "precio": 5000,
+        "stock": 20
+    },
+    {
+        "nombre": "Camara",
+        "categoria": "perifericos",
+        "precio": 4200,
+        "stock": 6
+    }
+]
