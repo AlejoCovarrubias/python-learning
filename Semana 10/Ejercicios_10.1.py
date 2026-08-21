@@ -34,7 +34,5 @@ def dificil():
     print(f"Promedio mas alto: {np.max(np.mean(maquina, axis=1))}")
     print(f"Medicion mas alto: {np.max(maquina)}")
     
-    
-    
 if __name__ == "__main__":
     dificil()
