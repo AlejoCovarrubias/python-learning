@@ -1,4 +1,6 @@
 import numpy as np
+
+
 def muy_facil():
     temperaturas = np.array([18, 21, 24, 27, 30, 33])
     print(temperaturas[0])

@@ -1,5 +1,8 @@
 import time
+
 import numpy as np
+
+
 def muy_facil():
     numeros = np.array([4, 8, 12, 16, 20])
     print(f"Numeros por 3: {numeros * 3}")
